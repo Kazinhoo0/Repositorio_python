@@ -1,0 +1,57 @@
+from time import sleep
+import random
+print(
+    "Este programa joga par ou impar com o computador, o jogo só sera interrompido quando o jogar perder, mostrando o total de vitorias consecutivas que ele conquistou no final do jogo.")
+
+jogador = 0
+vitorias_consecutivas = 0
+resultado = 0
+
+while True:
+    while True:
+        jogador = (input("Digite um valor\n:"))
+        if jogador.isdigit():
+            jogador = int(jogador)
+            break
+        else:
+            print("\033[31mERRO!,Digite apenas valores númericos válidos\033[m.")
+    while True:
+        escolha = str(input("IMPAR OU PAR ? [I/P]\n: ")).upper()
+        if escolha not in ["P", "I"]:
+            print("ERRO!, Porfavor digite apenas I/P...")
+        else:
+            break
+    print("-" * 40)
+    sleep(0.30)
+    print("GERANDO O RESULTADO...")
+    print("-" * 40)
+    sleep(1.45)
+    computador = random.randint(1, 11)
+    soma = jogador + computador
+
+    if soma % 2 == 0:
+        resultado = "PAR"
+    elif soma % 2 != 0:
+        resultado = "ÍMPAR"
+    sleep(1)
+    print(f"Você jogou {jogador} e o cumputador {computador}. Total de {soma} deu {resultado}")
+
+    sleep(1)
+    if (escolha == "P" and resultado == "PAR") or (escolha == "I" and resultado == "ÍMPAR"):
+        vitorias_consecutivas += 1
+        print(f"Você venceu! Vitórias consecutivas: {vitorias_consecutivas}")
+    else:
+        print(f"Você perdeu. Vitórias consecutivas: {vitorias_consecutivas}")
+    print("-=" * 40)
+    print("""Quer continuar jogando ?
+    [S] Sim, quero continuar.
+    [N] Não, estou cansado quero parar.""")
+    while True:
+        continuacao = input(":").upper()
+        if continuacao not in ["S", "N"]:
+            print("Por favor, Insira apenas S ou N")
+        else:
+            break
+    if continuacao == "N":
+        print("FIM DO JOGO.")
+        break
