@@ -1,6 +1,5 @@
 import random
 
-
 def caracteres_especiais(quantidade = 1):
     caracteres = "#$@!&%*"
     resultado = "".join(random.choice(caracteres)  for _ in range(quantidade))
@@ -20,5 +19,4 @@ def escolher(num,caracter):
     gerador_str = "".join(map(str, gerador))
     caracteres = "#$@!&%*"
     g = "".join(random.sample(caracteres,caracter))
-    print(f"A sua nova senha é : {g}{gerador_str}")
-    return f"{g}{gerador_str}"
+    return (f"{g}{gerador_str}")
