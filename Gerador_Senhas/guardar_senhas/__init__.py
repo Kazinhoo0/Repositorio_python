@@ -65,3 +65,4 @@ def cadastrar2(arq, nome="Desconhecido", caracter = "Desconhecido"):
             print(F"\033[32mSua nova senha é {randomizar}")
             print(f"\033[32mSenha Cadastrada com sucesso!\033[m")
             a.close()
+            
