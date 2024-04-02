@@ -1,5 +1,6 @@
 from interface import cabecalho
 from gerar_senhas import escolher
+import random
 def arquivoexiste(nome):
     try:
         a = open(nome, "rt")
@@ -38,11 +39,13 @@ def cadastrar(arq, nome="Desconhecido"):
         print("\033[31mHouve um ERRO na abertura do arquivo!!\033[m")
     else:
         try:
-            a.write(f"{nome}\n")
+            randomizar = "".join(random.sample(nome,len(nome)))
+            a.write(f"{randomizar}\n")
         except:
             print("\033[31mHouve um ERRO na hora de cadastrar od dados\033[m")
         else:
-            print(f"\033[32mSenha = {nome} Cadastra com sucesso!\033[m")
+            print(f"Sua nova senha é \033[32m{randomizar}\033[m")
+            print(f"\033[32mSenha Cadastra com sucesso!\033[m")
             a.close()
 
 
@@ -54,9 +57,11 @@ def cadastrar2(arq, nome="Desconhecido", caracter = "Desconhecido"):
     else:
         try:
             senha_gerada = escolher(nome,caracter)
-            a.write(f"({senha_gerada}))\n")
+            randomizar = "".join(random.sample(senha_gerada,len(senha_gerada)))
+            a.write(f"({randomizar}\n")
         except:
             print("\033[31mHouve um ERRO ao cadastrar os dados\033[m")
         else:
-            print(f"\033[32mSenha = {senha_gerada} Cadastrada com sucesso!\033[m")
+            print(F"\033[32mSua nova senha é {randomizar}")
+            print(f"\033[32mSenha Cadastrada com sucesso!\033[m")
             a.close()
