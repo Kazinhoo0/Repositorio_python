@@ -45,7 +45,7 @@ def alter_horas():
     
 def horas_trab():
     """
-    Está função,faz uma consulta das horas trabalhas em todos os projetos cadastrados no banco de dados.
+    Está função faz uma consulta das horas trabalhas em todos os projetos cadastrados no banco de dados.
     """
     conexao_banco = estabelecer_conexao()
     while True:
@@ -72,7 +72,7 @@ def horas_trab():
         
 def ver_projetos():
     """
-    Está função, mostra todas as estatísticas de todos os projetos que o usuário cadastrou.
+    Está função mostra todas as estatísticas de todos os projetos que o usuário cadastrou.
     """
     conexao_banco = estabelecer_conexao()
     try:
@@ -102,7 +102,7 @@ def ver_projetos():
     
 def novo_projeto():
     """
-    Esta função, cadastra um novo projeto ao seu banco de dados, ela pede todas as informações que seram imprimidas na função ver_projetos
+    Esta função cadastra um novo projeto ao seu banco de dados, ela pede todas as informações que serão imprimidas na função ver_projetos
     """
     conexao_banco = estabelecer_conexao()
     while True:
@@ -137,7 +137,7 @@ def novo_projeto():
     
 def soma_horas_trab():
     """
-    Está função, permite o usuário adicionar horas trabalhas em um projeto.
+    Está função permite o usuário adicionar horas trabalhas em um projeto.
     """
     conexao_banco = estabelecer_conexao()
     while True:
